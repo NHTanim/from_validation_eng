@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="full_page">
+        <div class="main_nav">
+           <div class="line"></div>
+           <div class="line"></div>
+           <div class="line"></div>
+        </div>
+  
+        <hr>
+  
+        <h2>Contact<span>Me</span></h2>
+  
+        <form action="">
+            <input type="text" name="forml" id="name" placeholder="Name"></br>
+            <input type="email" name="forml" id="email" placeholder="Email"></br>
+            <textarea name="comment" id="froml" cols="" rows="2" placeholder="Message"></textarea></br>
+  
+           <button type="submit" onclick="return valid()">Get to touch</button>
+  
+  
+        </form>
+  
+      </div>
+      <hr class="bottom_border">
+      <div class="bottom_msg">
+      <span id="msg" class="error_msg">Test</span>
+      </div>
+  
+  
+      <script>
+         var from_name = document.getElementById("name");
+         var error_msg = document.getElementById("msg");
+         var from_email = document.getElementById("email");
+  
+         function valid() {
+             if (from_name.value == "") {
+              from_name.style.border = "2px solid #e74c3c";
+              error_msg.innerHTML = "User name cannot be blank";
+              from_name.focus();
+              return false; 
+             }
+  
+             if (from_name.value.length <=8) {
+              from_name.style.border = "2px solid #e74c3c";
+              error_msg.innerHTML = "User name must 8 characters";
+              from_name.focus();
+              return false;
+             }
+  
+              if(from_name.value != ""){
+                  from_name.style.border = "2px solid white";
+                  error_msg.innerHTML = "";
+             }
+  
+  
+  
+  
+             if (from_email.value == "") {
+                  from_email.style.border = "2px solid #e74c3c";
+                  error_msg.innerHTML = "Email cannot be blank";
+                  from_email.focus();
+                  return false;
+            }
+  
+              // if (user_email.value != "") {
+                  // user_email.style.border = "2px solid #e74c3c";
+                  // user_emailerror.innerHTML = "Email is not valid";
+                  // user_email.focus();
+                  // return false;
+              // }
+              if (from_email.value != "") {
+                  from_email.style.border = '2px solid white';
+                  error_msg.innerHTML =" ";
+                  // return false;
+                  }
+
+         }
+      </script>
+</body>
+</html>
